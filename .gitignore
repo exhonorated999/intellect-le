@@ -1,0 +1,10 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.db
+
+# Build artifacts / packages
+*.zip
+
+# Unrelated case files (not part of the website)
+*.pulse
