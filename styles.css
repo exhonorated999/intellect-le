@@ -38,6 +38,7 @@ body {
 }
 
 a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; }
 h1, h2, h3, h4 { font-family: "Orbitron", sans-serif; line-height: 1.05; letter-spacing: 0.01em; }
 
 /* ---------------- Background layers ---------------- */
@@ -236,8 +237,9 @@ h1, h2, h3, h4 { font-family: "Orbitron", sans-serif; line-height: 1.05; letter-
 .hero-shot { margin: 52px auto 0; max-width: 980px; }
 
 /* Alternating feature rows */
-.feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; margin-bottom: 84px; }
+.feature-row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 52px; align-items: center; margin-bottom: 84px; }
 .feature-row:last-child { margin-bottom: 0; }
+.feature-media { min-width: 0; }
 .feature-row--reverse .feature-media { order: -1; }
 .feature-text h3 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 12px 0 14px; }
 .feature-text p { color: var(--ink-dim); }
@@ -264,7 +266,8 @@ h1, h2, h3, h4 { font-family: "Orbitron", sans-serif; line-height: 1.05; letter-
 .story-aside blockquote { font-family: "Orbitron", sans-serif; font-size: 1.15rem; line-height: 1.4; color: var(--ink); }
 
 /* Gallery */
-.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+.gallery > .app-shot { min-width: 0; }
 
 /* Downloads */
 .download-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
