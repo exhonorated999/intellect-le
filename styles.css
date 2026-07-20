@@ -202,6 +202,23 @@ h1, h2, h3, h4 { font-family: "Orbitron", sans-serif; line-height: 1.05; letter-
 }
 @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
+/* ---------------- Subpage hero ---------------- */
+.hero--sub { min-height: auto; padding: 160px 24px 70px; }
+.hero--sub .hero-title { font-size: clamp(2.6rem, 8vw, 5rem); }
+.back-link {
+  display: inline-block; margin-bottom: 22px;
+  font-family: "Orbitron", sans-serif; font-size: .78rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-dim); transition: color .25s, transform .25s;
+}
+.back-link:hover { color: var(--pink); transform: translateX(-4px); }
+.status-pill {
+  display: inline-flex; align-items: center; gap: 9px; margin-top: 30px;
+  padding: 9px 18px; border-radius: 999px; border: 1px solid var(--panel-brd);
+  background: rgba(13,9,18,.5); color: var(--ink-dim);
+  font-family: "Orbitron", sans-serif; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+}
+.status-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--grad); box-shadow: var(--glow-orange); animation: nodePulse 2.4s ease-in-out infinite; }
+
 .hero-eyebrow {
   font-family: "Orbitron", sans-serif; font-size: .74rem; letter-spacing: .3em;
   text-transform: uppercase; color: var(--ink-dim); margin-bottom: 22px;

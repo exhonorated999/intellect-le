@@ -1,24 +1,27 @@
-// Intellect LE — interactions
+// Intellect LE — interactions (shared across pages, null-safe)
 
 // Nav: shrink/blur on scroll
 const nav = document.getElementById('nav');
-const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
-onScroll();
-window.addEventListener('scroll', onScroll, { passive: true });
+if (nav) {
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-// Mobile menu toggle
-const toggle = document.getElementById('navToggle');
-toggle.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', String(open));
-});
-// Close mobile menu after clicking a link
-document.querySelectorAll('.nav-links a').forEach(a =>
-  a.addEventListener('click', () => {
-    nav.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  })
-);
+  // Mobile menu toggle
+  const toggle = document.getElementById('navToggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    document.querySelectorAll('.nav-links a').forEach(a =>
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  }
+}
 
 // Scroll reveal
 const io = new IntersectionObserver((entries) => {
@@ -34,37 +37,42 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 // Contact form (front-end demo handler)
 const form = document.getElementById('contactForm');
 const note = document.getElementById('formNote');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (!form.checkValidity()) {
-    note.textContent = 'Please complete the required fields.';
-    form.reportValidity();
-    return;
-  }
-  const name = form.name.value.trim();
-  note.textContent = `Thanks, ${name || 'officer'} — your message is queued. We'll be in touch.`;
-  form.reset();
-});
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      if (note) note.textContent = 'Please complete the required fields.';
+      form.reportValidity();
+      return;
+    }
+    const name = form.name.value.trim();
+    if (note) note.textContent = `Thanks, ${name || 'officer'} — your message is queued. We'll be in touch.`;
+    form.reset();
+  });
+}
 
 // Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Make entire product cards with a data-href clickable (open in new window)
+// Clickable product cards.
+// External links (http/https) open in a new tab; internal (relative) links
+// navigate within the same tab.
 document.querySelectorAll('.product-card.is-linked').forEach(card => {
   const url = card.getAttribute('data-href');
   if (!url) return;
+  const isExternal = /^https?:\/\//i.test(url);
+  const go = () => {
+    if (isExternal) window.open(url, '_blank', 'noopener,noreferrer');
+    else window.location.href = url;
+  };
   card.addEventListener('click', (e) => {
-    // If the inner text link was clicked, let it handle the navigation itself
-    if (e.target.closest('a')) return;
-    window.open(url, '_blank', 'noopener,noreferrer');
+    if (e.target.closest('a')) return; // let inner links handle themselves
+    go();
   });
-  // Keyboard accessibility
   card.setAttribute('role', 'link');
   card.setAttribute('tabindex', '0');
   card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
   });
 });
