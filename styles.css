@@ -270,7 +270,7 @@ h1, h2, h3, h4 { font-family: "Orbitron", sans-serif; line-height: 1.05; letter-
 .gallery > .app-shot { min-width: 0; }
 
 /* Downloads */
-.download-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.download-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; max-width: 680px; margin: 0 auto; }
 .download-card { background: var(--panel); border: 1px solid var(--panel-brd); border-radius: var(--radius); padding: 30px 26px; text-align: center; backdrop-filter: blur(8px); }
 .dl-icon { width: 58px; height: 58px; margin: 0 auto 16px; border-radius: 14px; display: grid; place-items: center; background: rgba(255,46,139,.08); border: 1px solid var(--panel-brd); }
 .dl-name { font-size: 1.25rem; margin-bottom: 6px; }
