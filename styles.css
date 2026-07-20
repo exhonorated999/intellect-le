@@ -377,6 +377,8 @@ h1, h2, h3, h4 { font-family: "Orbitron", sans-serif; line-height: 1.05; letter-
 
 /* ---------------- Contact ---------------- */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
+.contact-grid--single { grid-template-columns: 1fr; }
+.contact-grid--single .contact-copy p { max-width: 600px; margin-left: auto; margin-right: auto; }
 .contact-copy p { color: var(--ink-dim); font-size: 1.05rem; margin-bottom: 22px; max-width: 380px; }
 .contact-email { font-family: "Orbitron", sans-serif; font-size: 1.1rem; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
