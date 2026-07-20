@@ -48,3 +48,23 @@ form.addEventListener('submit', (e) => {
 
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Make entire product cards with a data-href clickable (open in new window)
+document.querySelectorAll('.product-card.is-linked').forEach(card => {
+  const url = card.getAttribute('data-href');
+  if (!url) return;
+  card.addEventListener('click', (e) => {
+    // If the inner text link was clicked, let it handle the navigation itself
+    if (e.target.closest('a')) return;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  });
+  // Keyboard accessibility
+  card.setAttribute('role', 'link');
+  card.setAttribute('tabindex', '0');
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  });
+});

@@ -251,6 +251,8 @@ h1, h2, h3, h4 { font-family: "Orbitron", sans-serif; line-height: 1.05; letter-
 }
 .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.5), var(--glow-pink); }
 .product-card:hover::before { opacity: 1; }
+.product-card.is-linked { cursor: pointer; }
+.product-card.is-linked:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
 .product-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
 .product-tag { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--pink); font-family: "Orbitron", sans-serif; }
 .product-node { width: 10px; height: 10px; border-radius: 50%; background: var(--grad); box-shadow: var(--glow-orange); animation: nodePulse 2.4s ease-in-out infinite; }
