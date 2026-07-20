@@ -219,6 +219,87 @@ h1, h2, h3, h4 { font-family: "Orbitron", sans-serif; line-height: 1.05; letter-
 }
 .status-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--grad); box-shadow: var(--glow-orange); animation: nodePulse 2.4s ease-in-out infinite; }
 
+/* ---------------- Product detail page components ---------------- */
+.section-sub { color: var(--ink-dim); font-size: 1.05rem; margin-top: 16px; max-width: 640px; }
+
+.app-shot {
+  border-radius: 14px; border: 1px solid var(--panel-brd); overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0,0,0,.55); background: var(--bg-2); position: relative;
+}
+.app-shot::before {
+  content: ""; position: absolute; inset: 0; padding: 1px; border-radius: 14px; pointer-events: none;
+  background: var(--grad); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; opacity: .35;
+}
+.app-shot img { display: block; width: 100%; height: auto; }
+
+.hero-shot { margin: 52px auto 0; max-width: 980px; }
+
+/* Alternating feature rows */
+.feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; margin-bottom: 84px; }
+.feature-row:last-child { margin-bottom: 0; }
+.feature-row--reverse .feature-media { order: -1; }
+.feature-text h3 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 12px 0 14px; }
+.feature-text p { color: var(--ink-dim); }
+.checklist { list-style: none; margin-top: 20px; display: grid; gap: 11px; }
+.checklist li { position: relative; padding-left: 30px; color: var(--ink); font-size: .98rem; }
+.checklist li::before {
+  content: "✓"; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 6px;
+  display: grid; place-items: center; font-size: .72rem; color: #120810; background: var(--grad);
+}
+
+/* Simple info cards (value / who / why) */
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+.info-card { background: var(--panel); border: 1px solid var(--panel-brd); border-radius: var(--radius); padding: 26px 24px; backdrop-filter: blur(8px); }
+.info-card .info-ico { font-family: "Orbitron", sans-serif; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 12px; }
+.info-card h4 { font-size: 1.12rem; margin-bottom: 9px; }
+.info-card p { color: var(--ink-dim); font-size: .93rem; }
+
+/* Story */
+.story-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 52px; align-items: start; }
+.story-grid p { color: var(--ink-dim); margin-bottom: 16px; font-size: 1.03rem; }
+.story-grid strong { color: var(--ink); font-weight: 600; }
+.story-aside { background: var(--grad-soft); border: 1px solid rgba(255,122,24,.28); border-radius: var(--radius); padding: 30px; }
+.story-aside .kicker { margin-bottom: 12px; }
+.story-aside blockquote { font-family: "Orbitron", sans-serif; font-size: 1.15rem; line-height: 1.4; color: var(--ink); }
+
+/* Gallery */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+/* Downloads */
+.download-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.download-card { background: var(--panel); border: 1px solid var(--panel-brd); border-radius: var(--radius); padding: 30px 26px; text-align: center; backdrop-filter: blur(8px); }
+.dl-icon { width: 58px; height: 58px; margin: 0 auto 16px; border-radius: 14px; display: grid; place-items: center; background: rgba(255,46,139,.08); border: 1px solid var(--panel-brd); }
+.dl-name { font-size: 1.25rem; margin-bottom: 6px; }
+.dl-meta { color: var(--ink-faint); font-size: .85rem; margin-bottom: 20px; }
+.download-btn {
+  display: inline-flex; align-items: center; justify-content: center; width: 100%;
+  font-family: "Orbitron", sans-serif; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 600;
+  padding: 13px 20px; border-radius: 999px; background: var(--grad); color: #120810; box-shadow: var(--glow-pink);
+  transition: transform .3s var(--ease), box-shadow .3s;
+}
+.download-btn:hover { transform: translateY(-3px); box-shadow: 0 0 46px rgba(255,46,139,.6); }
+.download-btn.is-soon { background: rgba(255,255,255,.05); color: var(--ink-faint); box-shadow: none; cursor: not-allowed; border: 1px solid var(--panel-brd); }
+.download-btn.is-soon:hover { transform: none; }
+.download-soon { display: block; margin-top: 12px; font-size: .78rem; color: var(--ink-faint); letter-spacing: .04em; }
+
+/* Link buttons */
+.link-buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.link-btn { display: flex; flex-direction: column; gap: 4px; padding: 22px 24px; border-radius: var(--radius); background: var(--panel); border: 1px solid var(--panel-brd); transition: border-color .3s, transform .3s, box-shadow .3s; }
+.link-btn:hover { transform: translateY(-4px); border-color: var(--pink); box-shadow: var(--glow-pink); }
+.link-btn.is-soon { opacity: .6; cursor: not-allowed; }
+.link-btn.is-soon:hover { transform: none; border-color: var(--panel-brd); box-shadow: none; }
+.lb-title { font-family: "Orbitron", sans-serif; font-size: 1rem; }
+.lb-sub { color: var(--ink-faint); font-size: .82rem; }
+
+@media (max-width: 900px) {
+  .feature-row, .story-grid { grid-template-columns: 1fr; gap: 30px; }
+  .feature-row--reverse .feature-media { order: 0; }
+  .download-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) { .gallery { grid-template-columns: 1fr; } }
+
 .hero-eyebrow {
   font-family: "Orbitron", sans-serif; font-size: .74rem; letter-spacing: .3em;
   text-transform: uppercase; color: var(--ink-dim); margin-bottom: 22px;
