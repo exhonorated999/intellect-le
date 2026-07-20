@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project Hindsight by Intellect LE — rapid forensic triage for Windows computers and USB drives. Surface device identity, browser history, questionable apps, keyword and CSAM hash hits in minutes. Free to SOMS Symposium attendees." />
+  <title>Project Hindsight — Intellect LE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- Atmospheric background layers -->
+  <div class="bg-layer bg-grid" aria-hidden="true"></div>
+  <div class="bg-layer bg-streaks" aria-hidden="true"></div>
+  <div class="bg-layer bg-glow" aria-hidden="true"></div>
+  <div class="bg-layer bg-grain" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="../index.html" class="brand" aria-label="Intellect LE home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 44 44" width="30" height="30" role="img">
+          <defs>
+            <linearGradient id="gm" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff7a18"/>
+              <stop offset="0.5" stop-color="#ff2e8b"/>
+              <stop offset="1" stop-color="#a02bff"/>
+            </linearGradient>
+          </defs>
+          <path fill="none" stroke="url(#gm)" stroke-width="2.2" stroke-linejoin="round"
+            d="M22 3 L38 12 V32 L22 41 L6 32 V12 Z"/>
+          <path fill="url(#gm)" d="M20 14 h4 v3 h-4 z M20 20 h4 v10 h-4 z"/>
+        </svg>
+      </span>
+      <span class="brand-text">INTELLECT<span class="brand-le">LE</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="../index.html#products">All Products</a>
+    </nav>
+
+    <a href="https://www.somsymposium.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost nav-cta">Attend SOMS</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero hero--sub" id="home">
+    <div class="hero-inner">
+      <a href="../index.html#products" class="back-link reveal" data-delay="0">← Back to Products</a>
+      <div class="hero-emblem reveal" data-delay="0" style="margin-bottom:22px;">
+        <span aria-hidden="true" style="display:inline-block;position:relative;z-index:1;width:120px;height:120px;border-radius:20px;border:1px solid var(--panel-brd);background:#0d0912;box-shadow:0 0 30px rgba(255,122,24,.4);">
+          <svg viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Project Hindsight logo">
+            <defs>
+              <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff7a18"/>
+                <stop offset="0.5" stop-color="#ff2e8b"/>
+                <stop offset="1" stop-color="#a02bff"/>
+              </linearGradient>
+            </defs>
+            <g fill="url(#hg)">
+              <circle cx="42" cy="50" r="8"/><circle cx="60" cy="50" r="8"/><circle cx="78" cy="50" r="8"/>
+              <circle cx="42" cy="72" r="8"/><circle cx="60" cy="72" r="8"/><circle cx="78" cy="72" r="8"/>
+            </g>
+          </svg>
+        </span>
+      </div>
+      <p class="hero-eyebrow reveal" data-delay="1">Intellect LE Platform · Digital Forensic Triage</p>
+      <h1 class="hero-title reveal" data-delay="2" style="font-size:clamp(2rem,5.5vw,3.5rem);">
+        <span class="grad">Search and Verify Devices</span>
+        <span class="grad">in Minutes, Not Hours</span>
+      </h1>
+      <p class="hero-mission reveal" data-delay="3" style="max-width:660px;">
+        Rapid forensic triage of Windows computers and USB drives — built for officers supervising registered sex offenders.
+      </p>
+      <div class="hero-cta reveal" data-delay="4">
+        <a href="#features" class="btn btn-primary">See What It Finds</a>
+        <a href="https://www.somsymposium.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Attend the SOMS Symposium</a>
+      </div>
+      <p class="status-pill reveal" data-delay="5"><span class="dot"></span> Windows &amp; USB · Keyword &amp; CSAM hash search · Free to SOMS attendees</p>
+
+      <div class="hero-shot app-shot reveal" data-delay="5">
+        <img src="assets/shot-devicetype.png" alt="Project Hindsight device selection screen — choose a Windows computer or USB drive to triage" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION / ORIGIN -->
+  <section class="section" id="story">
+    <div class="section-head reveal">
+      <span class="kicker">Why Hindsight Exists</span>
+      <h2 class="section-title">Fast, verifiable answers when <span class="grad">every minute counts</span>.</h2>
+    </div>
+    <div class="story-grid">
+      <div class="reveal">
+        <p>Officers supervising registered sex offenders face a very real problem: <strong>how do you rapidly search and verify electronic devices for signs of contraband?</strong></p>
+        <p>Free tools — while capable and proven — are often slow, inconsistent in training availability, and difficult for new officers to adopt. Paid tools, though powerful, keep rising in cost and rarely scale; most agencies can't afford to equip every member of a unit, forcing officers to <strong>share licenses</strong>. That becomes a major operational issue when multiple devices are encountered at a single location.</p>
+        <p>Hindsight eliminates these barriers — engineered to quickly triage Windows computers and Windows-based USB drives and deliver <strong>near-instant insight</strong> into what's on a device.</p>
+      </div>
+      <aside class="story-aside reveal">
+        <span class="kicker">Our Purpose</span>
+        <blockquote>"Put fast, defensible triage in the hands of every officer — without asking their agency to buy another seat."</blockquote>
+      </aside>
+    </div>
+  </section>
+
+  <!-- VALUE PROP -->
+  <section class="section" id="value">
+    <div class="section-head reveal">
+      <span class="kicker">What Makes Hindsight Different</span>
+      <h2 class="section-title">Powerful triage, <span class="grad">no barriers</span>.</h2>
+    </div>
+    <div class="info-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+      <article class="info-card reveal">
+        <span class="info-ico">Built for Speed</span>
+        <h4>Near-instant insight</h4>
+        <p>Triage a Windows computer or USB drive and surface the details that matter in minutes — not hours.</p>
+      </article>
+      <article class="info-card reveal">
+        <span class="info-ico">Scales to Everyone</span>
+        <h4>No shared licenses</h4>
+        <p>Free to equip your entire unit. Handle multiple devices at a single scene without waiting on a seat.</p>
+      </article>
+      <article class="info-card reveal">
+        <span class="info-ico">Easy to Adopt</span>
+        <h4>New officers, day one</h4>
+        <p>A clear, guided workflow means even newer officers can run a defensible triage with confidence.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="section" id="features">
+    <div class="section-head reveal">
+      <span class="kicker">Key Features</span>
+      <h2 class="section-title">Everything you need to <span class="grad">triage a device</span>.</h2>
+    </div>
+
+    <!-- Device information -->
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="kicker">Device Information</span>
+        <h3>Know the device instantly</h3>
+        <p>Establish identity and ownership the moment a scan starts — critical context for any report.</p>
+        <ul class="checklist">
+          <li>Computer name, operating system, and product ID</li>
+          <li>Registered owner and organization</li>
+          <li>Hardware serials and system UUID</li>
+          <li>Local user accounts with last-login times</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-deviceinfo.png" alt="Hindsight Device Information view showing system identification, hardware, and user accounts" /></div>
+      </div>
+    </div>
+
+    <!-- Questionable applications -->
+    <div class="feature-row feature-row--reverse">
+      <div class="feature-text reveal">
+        <span class="kicker">Questionable Applications</span>
+        <h3>Spot the tools that matter</h3>
+        <p>Automatically categorize installed software so forensically relevant apps rise to the top.</p>
+        <ul class="checklist">
+          <li>Flags anti-forensic, VPN/remote, and dark web / P2P tools</li>
+          <li>Surfaces cryptocurrency, communications, and virtual machine apps</li>
+          <li>Categorized results with install paths</li>
+          <li>One-click flagging for your report</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-apps.png" alt="Installed applications scan results grouped by anti-forensic, VPN, P2P, cryptocurrency and more" /></div>
+      </div>
+    </div>
+
+    <!-- Browser history -->
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="kicker">Browser History &amp; Usernames</span>
+        <h3>Follow the digital trail</h3>
+        <p>Pull browsing activity and account artifacts across every major browser in one place.</p>
+        <ul class="checklist">
+          <li>Browser history with titles, visit times, and counts</li>
+          <li>Download history and website usernames</li>
+          <li>Chrome, Edge, Firefox, Brave, Opera, and Vivaldi</li>
+          <li>Flag individual entries as you review</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-browser.png" alt="Microsoft Edge browser history, download history and website usernames inside Hindsight" /></div>
+      </div>
+    </div>
+
+    <!-- Keyword & CSAM hash -->
+    <div class="feature-row feature-row--reverse">
+      <div class="feature-text reveal">
+        <span class="kicker">Keyword &amp; CSAM Hash Search</span>
+        <h3>Targeted contraband detection</h3>
+        <p>Run focused searches for the terms and known files that matter to your investigation.</p>
+        <ul class="checklist">
+          <li>Keyword search across file names and paths</li>
+          <li>Hash matching against Project VIC and known contraband databases</li>
+          <li>Media file scanning with metadata and thumbnails</li>
+          <li>Choose only the modules you need for each scan</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-modules.png" alt="Hindsight scan module selection — questionable applications, browser history, media, keyword search, and Project VIC hash matching" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="section-head reveal">
+      <span class="kicker">How Hindsight Works</span>
+      <h2 class="section-title">From device to <span class="grad">report</span>.</h2>
+    </div>
+    <div class="info-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+      <article class="info-card reveal"><span class="info-ico">Step 01</span><h4>Select device type</h4><p>Windows computer or USB drive.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 02</span><h4>Choose modules</h4><p>Pick only the scans you need.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 03</span><h4>Begin triage scan</h4><p>Results populate in real time.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 04</span><h4>Review the findings</h4><p>Device info, apps, history, and hits.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 05</span><h4>Flag what matters</h4><p>Mark items of interest as you go.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 06</span><h4>Generate report</h4><p>Export a clean, defensible summary.</p></article>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section" id="who">
+    <div class="section-head reveal">
+      <span class="kicker">Who Hindsight Is For</span>
+      <h2 class="section-title">Made for the officers <span class="grad">doing the work</span>.</h2>
+    </div>
+    <div class="info-grid">
+      <article class="info-card reveal"><h4>SO Management Units</h4><p>Officers supervising registered sex offenders in the field.</p></article>
+      <article class="info-card reveal"><h4>Probation &amp; Parole</h4><p>Supervising officers who need fast device checks during visits.</p></article>
+      <article class="info-card reveal"><h4>ICAC &amp; CSAM Investigators</h4><p>Teams triaging for known contraband and keyword hits.</p></article>
+      <article class="info-card reveal"><h4>Small Agencies</h4><p>Departments that can't afford a paid forensic seat per officer.</p></article>
+      <article class="info-card reveal"><h4>New Officers</h4><p>Anyone who needs an approachable, guided triage workflow.</p></article>
+    </div>
+  </section>
+
+  <!-- WHY AGENCIES TRUST -->
+  <section class="section" id="why">
+    <div class="section-head reveal">
+      <span class="kicker">Why Agencies Trust Hindsight</span>
+      <h2 class="section-title">Real triage power, <span class="grad">zero financial barrier</span>.</h2>
+    </div>
+    <div class="info-grid">
+      <article class="info-card reveal"><h4>Faster Field Checks</h4><p>Triage devices in minutes at the scene.</p></article>
+      <article class="info-card reveal"><h4>Equip Every Officer</h4><p>No shared licenses, no per-seat cost.</p></article>
+      <article class="info-card reveal"><h4>Multiple Devices at Once</h4><p>Handle several devices at a single location.</p></article>
+      <article class="info-card reveal"><h4>Defensible Reporting</h4><p>Clean, exportable summaries that hold up.</p></article>
+      <article class="info-card reveal"><h4>Easy Adoption</h4><p>Guided workflow new officers can run.</p></article>
+      <article class="info-card reveal"><h4>No Recurring Cost</h4><p>Free to SOMS attendees — no ongoing fees.</p></article>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section" id="access">
+    <div class="product-card product-card--join reveal" style="max-width:900px;margin:0 auto;text-align:left;">
+      <span class="kicker">Access &amp; Availability</span>
+      <h3 class="product-name" style="margin-top:10px;">Available through the SOMS Symposium.</h3>
+      <p class="product-desc">Hindsight is provided <strong>free of charge to all attendees</strong> of the Sex Offender Management Symposium. Attend, and take it home for your agency.</p>
+      <a class="btn btn-primary" href="https://www.somsymposium.com" target="_blank" rel="noopener noreferrer">Learn more at somsymposium.com</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-text">INTELLECT<span class="brand-le">LE</span></span>
+        <p>Technology. Training. Transformation.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <div>
+          <h4>Company</h4>
+          <a href="../index.html#about">About Us</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <a href="https://www.inv-network.org" target="_blank" rel="noopener noreferrer">Investigator Network</a>
+          <a href="https://www.project-viper.com" target="_blank" rel="noopener noreferrer">Project V.I.P.E.R.</a>
+          <a href="https://www.tracetheft.com" target="_blank" rel="noopener noreferrer">TRACE Theft</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Intellect LE. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#products">Products</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
