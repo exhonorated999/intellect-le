@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Project Oversight by Intellect LE — a Sex Offender Management Database for small agencies to track registration, compliance checks, and interagency sweeps. Free to agencies attending our Symposium." />
+  <meta name="description" content="Project Oversight by Intellect LE — modern sex offender case management without the cost. Runs offline from a USB drive, no annual fees. Provided free to SOMS Symposium attendees." />
   <title>Project Oversight — Intellect LE</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,12 +40,12 @@
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#products">Products</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="../index.html#products">All Products</a>
     </nav>
 
-    <a href="../index.html#products" class="btn btn-ghost nav-cta">All Products</a>
+    <a href="https://www.somsymposium.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost nav-cta">Attend SOMS</a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -56,73 +56,241 @@
   <section class="hero hero--sub" id="home">
     <div class="hero-inner">
       <a href="../index.html#products" class="back-link reveal" data-delay="0">← Back to Products</a>
+      <div class="hero-emblem reveal" data-delay="0" style="margin-bottom:22px;">
+        <img src="assets/os-logo.jpg" alt="Project Oversight logo" style="width:120px;height:120px;border-radius:20px;position:relative;z-index:1;border:1px solid var(--panel-brd);box-shadow:0 0 30px rgba(160,43,255,.45);" />
+      </div>
       <p class="hero-eyebrow reveal" data-delay="1">Intellect LE Platform · Offender Management</p>
-      <h1 class="hero-title reveal" data-delay="2">
-        <span class="grad">Project Oversight</span>
+      <h1 class="hero-title reveal" data-delay="2" style="font-size:clamp(2rem,5.5vw,3.5rem);">
+        <span class="grad">Modern Sex Offender Case Management</span>
+        <span class="grad">Without the Cost</span>
       </h1>
-      <p class="hero-mission reveal" data-delay="3">
-        A Sex Offender Management Database built for small agencies — track registration, run compliance checks, and coordinate interagency sweeps in one place.
+      <p class="hero-mission reveal" data-delay="3" style="max-width:640px;">
+        Built for agencies with limited funding. Designed for officers who deserve better tools.
       </p>
       <div class="hero-cta reveal" data-delay="4">
-        <a href="mailto:Justin@intellect-le.com?subject=Project%20Oversight%20Access" class="btn btn-primary">Request Access</a>
-        <a href="../index.html#products" class="btn btn-ghost">Explore Other Products</a>
+        <a href="#how" class="btn btn-primary">Learn How Oversight Works</a>
+        <a href="https://www.somsymposium.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Attend the SOMS Symposium</a>
       </div>
-      <p class="status-pill reveal" data-delay="5"><span class="dot"></span> Free to agencies attending our Symposium</p>
+      <p class="status-pill reveal" data-delay="5"><span class="dot"></span> Runs locally · No annual fees · USB-deployable</p>
+
+      <div class="hero-shot app-shot reveal" data-delay="5">
+        <img src="assets/shot-dashboard.png" alt="Project Oversight case dashboard with offender stats, calendar, and to-do list" />
+      </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <!-- MISSION / ORIGIN -->
+  <section class="section" id="story">
+    <div class="section-head reveal">
+      <span class="kicker">Why Oversight Exists</span>
+      <h2 class="section-title">Officers deserve better than <span class="grad">spreadsheets and paper</span>.</h2>
+    </div>
+    <div class="story-grid">
+      <div class="reveal">
+        <p>After years of teaching sex offender supervision at the SOMS Symposium, we kept hearing the same thing from agencies across the country: <strong>no funding, spreadsheets, and hard-copy files</strong>.</p>
+        <p>It was an unacceptable reality — officers working to protect their communities, forced to "make do" with tools that made their jobs harder and their documentation weaker.</p>
+        <p>So we built a tool with <strong>no annual fees, no cloud costs, and no barriers to adoption</strong> — something any agency could run, regardless of budget or IT restrictions.</p>
+      </div>
+      <aside class="story-aside reveal">
+        <span class="kicker">Our Purpose</span>
+        <blockquote>"Give officers a modern, defensible, efficient system — without asking their agencies for a single dollar."</blockquote>
+      </aside>
+    </div>
+  </section>
+
+  <!-- VALUE PROP -->
+  <section class="section" id="value">
+    <div class="section-head reveal">
+      <span class="kicker">What Makes Oversight Different</span>
+      <h2 class="section-title">Own your data. <span class="grad">Owe nothing.</span></h2>
+    </div>
+    <div class="info-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+      <article class="info-card reveal">
+        <span class="info-ico">Offline Operation</span>
+        <h4>Runs locally</h4>
+        <p>No cloud storage. No external hosting. You truly own your data — it never leaves your device.</p>
+      </article>
+      <article class="info-card reveal">
+        <span class="info-ico">Zero Annual Fees</span>
+        <h4>No subscription</h4>
+        <p>No maintenance charges. No hidden costs. Free to adopt and free to keep using.</p>
+      </article>
+      <article class="info-card reveal">
+        <span class="info-ico">USB Deployment</span>
+        <h4>Plug in and go</h4>
+        <p>Designed to bypass restrictive IT environments. Plug in, run, and work — no installation required.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
   <section class="section" id="features">
     <div class="section-head reveal">
-      <span class="kicker">Capabilities</span>
-      <h2 class="section-title">Supervision tools that <span class="grad">keep agencies ahead</span>.</h2>
+      <span class="kicker">Key Features</span>
+      <h2 class="section-title">Built for <span class="grad">real supervision work</span>.</h2>
     </div>
 
-    <div class="product-grid">
-      <article class="product-card reveal">
-        <div class="product-top"><span class="product-tag">Registry</span><span class="product-node" aria-hidden="true"></span></div>
-        <h3 class="product-name">Registration Tracking</h3>
-        <p class="product-desc">Maintain a complete, searchable registry of offenders — status, tier, and required reporting schedules in one record.</p>
-      </article>
+    <!-- Local storage -->
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="kicker">Local Storage</span>
+        <h3>Data ownership, guaranteed</h3>
+        <p>Everything stays on your machine — nothing to breach, nothing to subscribe to.</p>
+        <ul class="checklist">
+          <li>All data stored locally</li>
+          <li>No dependency on external servers</li>
+          <li>No cloud security concerns</li>
+          <li>No recurring hosting costs passed to agencies</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-profile.png" alt="Offender profile with photo, descriptors, and residence information stored locally" /></div>
+      </div>
+    </div>
 
-      <article class="product-card reveal">
-        <div class="product-top"><span class="product-tag">Verification</span><span class="product-node" aria-hidden="true"></span></div>
-        <h3 class="product-name">Compliance Checks</h3>
-        <p class="product-desc">Log address and employment verifications, document field contacts, and flag non-compliance the moment it happens.</p>
-      </article>
+    <!-- CSV importing -->
+    <div class="feature-row feature-row--reverse">
+      <div class="feature-text reveal">
+        <span class="kicker">CSV Importing</span>
+        <h3>Migrate in minutes</h3>
+        <p>Bring your existing records in without re-keying everything by hand.</p>
+        <ul class="checklist">
+          <li>Import offender data from state databases</li>
+          <li>Migrate from spreadsheets or legacy systems</li>
+          <li>Dramatically reduce manual data entry</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-import.png" alt="Case dashboard showing Import CSV and Import .oversight options" /></div>
+      </div>
+    </div>
 
-      <article class="product-card reveal">
-        <div class="product-top"><span class="product-tag">Coordination</span><span class="product-node" aria-hidden="true"></span></div>
-        <h3 class="product-name">Interagency Sweeps</h3>
-        <p class="product-desc">Plan and coordinate multi-agency compliance sweeps — assign targets, share results, and keep everyone on the same page.</p>
-      </article>
+    <!-- SCOPE -->
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="kicker">SCOPE</span>
+        <h3>Field compliance checks — no app required</h3>
+        <p>Structured Compliance Operations &amp; Planning Engine puts field checks in officers' hands with nothing to install.</p>
+        <ul class="checklist">
+          <li>Select offenders for compliance checks</li>
+          <li>Generate a short-term QR link</li>
+          <li>Officers complete forms in the field — no app required</li>
+          <li>Return to Oversight, click once, and all data syncs back</li>
+          <li>Automatic after-action report generation</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-scope.png" alt="S.C.O.P.E dashboard for managing compliance sweeps" /></div>
+      </div>
+    </div>
 
-      <article class="product-card reveal">
-        <div class="product-top"><span class="product-tag">Deadlines</span><span class="product-node" aria-hidden="true"></span></div>
-        <h3 class="product-name">Alerts &amp; Due Dates</h3>
-        <p class="product-desc">Automatic reminders for re-registration windows, verification cycles, and overdue check-ins so nothing slips.</p>
-      </article>
+    <!-- Mapping -->
+    <div class="feature-row feature-row--reverse">
+      <div class="feature-text reveal">
+        <span class="kicker">Mapping</span>
+        <h3>Geographic awareness</h3>
+        <p>See where offenders are and make faster, better tactical decisions.</p>
+        <ul class="checklist">
+          <li>Visualize offender locations</li>
+          <li>Quickly identify potential suspects in an area</li>
+          <li>Support for tactical decision-making</li>
+          <li>Only GPS coordinates transmitted — no personal data</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-map.png" alt="Geographic distribution map with offender markers and tier filters" /></div>
+      </div>
+    </div>
 
-      <article class="product-card reveal">
-        <div class="product-top"><span class="product-tag">Reporting</span><span class="product-node" aria-hidden="true"></span></div>
-        <h3 class="product-name">Reports &amp; Exports</h3>
-        <p class="product-desc">Produce audit-ready reports for supervisors, prosecutors, and state registries in a few clicks.</p>
-      </article>
+    <!-- VIPER compatibility -->
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="kicker">VIPER Compatibility</span>
+        <h3>Seamless handoff to investigations</h3>
+        <p>Export a complete offender profile straight into Project V.I.P.E.R. the moment a new crime or lead emerges.</p>
+        <ul class="checklist">
+          <li>Export offender profiles directly into Project VIPER</li>
+          <li>Officers receive complete data: photos, residence images, vehicles, notes</li>
+          <li>Seamless handoff for investigations or new crimes</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-viper.png" alt="Offender profile with Export .oversight and Export PDF options for VIPER handoff" /></div>
+      </div>
+    </div>
 
-      <article class="product-card reveal">
-        <div class="product-top"><span class="product-tag">Access</span><span class="product-node" aria-hidden="true"></span></div>
-        <h3 class="product-name">Built for Small Agencies</h3>
-        <p class="product-desc">Lightweight, affordable, and simple to adopt — designed for departments without a dedicated records team or budget.</p>
-      </article>
+    <!-- Visiting offender tracking (no screenshot) -->
+    <div class="feature-row feature-row--reverse">
+      <div class="feature-text reveal">
+        <span class="kicker">Visiting Offender Tracking</span>
+        <h3>Know who's passing through</h3>
+        <p>Track temporary offenders entering your jurisdiction and never lose the thread on their departure.</p>
+        <ul class="checklist">
+          <li>Track temporary offenders entering your jurisdiction</li>
+          <li>Automated reminders when they're scheduled to leave</li>
+          <li>Follow-up workflows to confirm departure</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-cluster.png" alt="Clustered offender map with individual profile cards" /></div>
+      </div>
     </div>
   </section>
 
-  <!-- CTA BAND -->
-  <section class="section" id="cta">
-    <div class="product-card product-card--join reveal" style="max-width:820px;margin:0 auto;text-align:left;">
-      <h3 class="product-name">Attending our Symposium?</h3>
-      <p class="product-desc">Project Oversight is offered free to agencies that attend the Sex Offender Management Symposium. Reach out and we'll get you set up.</p>
-      <a class="btn btn-primary" href="mailto:Justin@intellect-le.com?subject=Project%20Oversight%20Access">Request Access</a>
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="section-head reveal">
+      <span class="kicker">How Oversight Works</span>
+      <h2 class="section-title">From USB to <span class="grad">done</span>.</h2>
+    </div>
+    <div class="info-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+      <article class="info-card reveal"><span class="info-ico">Step 01</span><h4>Plug in the USB</h4><p>No installation required.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 02</span><h4>Launch Oversight</h4><p>Runs directly from the drive.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 03</span><h4>Import your CSV</h4><p>Bring existing records in fast.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 04</span><h4>Manage &amp; check</h4><p>Handle offenders, run checks, generate reports.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 05</span><h4>Export to VIPER</h4><p>Hand off complete profiles when needed.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 06</span><h4>Receive updates</h4><p>From our small, dedicated server.</p></article>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section" id="who">
+    <div class="section-head reveal">
+      <span class="kicker">Who Oversight Is For</span>
+      <h2 class="section-title">Made for the <span class="grad">agencies that need it most</span>.</h2>
+    </div>
+    <div class="info-grid">
+      <article class="info-card reveal"><h4>SO Management Units</h4><p>Sex offender management teams that need defensible records.</p></article>
+      <article class="info-card reveal"><h4>Patrol Officers</h4><p>Officers conducting field compliance checks.</p></article>
+      <article class="info-card reveal"><h4>Small Agencies</h4><p>Departments working with limited budgets.</p></article>
+      <article class="info-card reveal"><h4>Spreadsheet &amp; Paper Shops</h4><p>Teams stuck on spreadsheets or paper files.</p></article>
+      <article class="info-card reveal"><h4>Documentation-First Officers</h4><p>Anyone who needs fast, defensible documentation.</p></article>
+    </div>
+  </section>
+
+  <!-- WHY AGENCIES TRUST -->
+  <section class="section" id="why">
+    <div class="section-head reveal">
+      <span class="kicker">Why Agencies Trust Oversight</span>
+      <h2 class="section-title">Operational benefits, <span class="grad">zero financial impact</span>.</h2>
+    </div>
+    <div class="info-grid">
+      <article class="info-card reveal"><h4>Faster Compliance Checks</h4><p>Cut the time each check takes.</p></article>
+      <article class="info-card reveal"><h4>Reduced Admin Burden</h4><p>Less paperwork, more supervision.</p></article>
+      <article class="info-card reveal"><h4>Better Documentation</h4><p>Improved quality that holds up.</p></article>
+      <article class="info-card reveal"><h4>Officer Collaboration</h4><p>Cleaner handoffs between officers.</p></article>
+      <article class="info-card reveal"><h4>No IT Reliance</h4><p>No dependency on IT departments.</p></article>
+      <article class="info-card reveal"><h4>No Recurring Cost</h4><p>No ongoing financial impact.</p></article>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section" id="access">
+    <div class="product-card product-card--join reveal" style="max-width:900px;margin:0 auto;text-align:left;">
+      <span class="kicker">Access &amp; Availability</span>
+      <h3 class="product-name" style="margin-top:10px;">Available through the SOMS Symposium.</h3>
+      <p class="product-desc">Oversight is currently provided <strong>at no cost to attendees</strong> of the Sex Offender Management Symposium. Attend, and take it home for your agency.</p>
+      <a class="btn btn-primary" href="https://www.somsymposium.com" target="_blank" rel="noopener noreferrer">Learn more at somsymposium.com</a>
     </div>
   </section>
 
