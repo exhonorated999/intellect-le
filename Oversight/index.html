@@ -42,10 +42,11 @@
     <nav class="nav-links" aria-label="Primary">
       <a href="#features">Features</a>
       <a href="#how">How It Works</a>
+      <a href="#downloads">Download</a>
       <a href="../index.html#products">All Products</a>
     </nav>
 
-    <a href="https://www.somsymposium.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost nav-cta">Attend SOMS</a>
+    <a href="#downloads" class="btn btn-ghost nav-cta">Download Demo</a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -68,7 +69,7 @@
         Built for agencies with limited funding. Designed for officers who deserve better tools.
       </p>
       <div class="hero-cta reveal" data-delay="4">
-        <a href="https://www.somsymposium.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Learn How Oversight Works</a>
+        <a href="#downloads" class="btn btn-primary">Download Free Demo</a>
         <a href="https://www.somsymposium.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Attend the SOMS Symposium</a>
       </div>
       <p class="status-pill reveal" data-delay="5"><span class="dot"></span> Runs locally · No annual fees · USB-deployable</p>
@@ -284,6 +285,42 @@
     </div>
   </section>
 
+  <!-- DOWNLOADS -->
+  <section class="section" id="downloads">
+    <div class="section-head reveal">
+      <span class="kicker">Downloads</span>
+      <h2 class="section-title">Try <span class="grad">Oversight</span> free.</h2>
+      <p class="section-sub">Download the installer and start a full-featured trial — no license key required. Install it on a workstation or run it from a USB drive in restricted IT environments.</p>
+    </div>
+
+    <div class="download-grid">
+      <article class="download-card reveal">
+        <div class="dl-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="url(#dgrad)" stroke-width="1.6">
+            <defs><linearGradient id="dgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff7a18"/><stop offset="1" stop-color="#a02bff"/></linearGradient></defs>
+            <rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M3 16h18M9 20h6M12 16v4"/>
+          </svg>
+        </div>
+        <h3 class="dl-name">Windows</h3>
+        <p class="dl-meta">Desktop app · NSIS installer (.exe)</p>
+        <a class="download-btn" id="dlWindows" href="https://intellect-unified-dashboard-production.up.railway.app/api/updates/project-oversight/latest" download>Download for Windows</a>
+        <span class="download-soon" id="dlVersionWin">Loading latest version…</span>
+      </article>
+
+      <article class="download-card reveal">
+        <div class="dl-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="url(#dgrad)" stroke-width="1.6">
+            <path d="M12 2v6M12 8l7 4v0M5 12l7-4M5 12v6l7 4 7-4v-6M5 12l7 4 7-4"/>
+          </svg>
+        </div>
+        <h3 class="dl-name">USB / Portable</h3>
+        <p class="dl-meta">Run from a USB drive</p>
+        <a class="download-btn" id="dlUsb" href="https://intellect-unified-dashboard-production.up.railway.app/api/updates/project-oversight/latest" download>Download for USB</a>
+        <span class="download-soon" id="dlVersionUsb">Same installer · portable mode</span>
+      </article>
+    </div>
+  </section>
+
   <!-- ACCESS -->
   <section class="section" id="access">
     <div class="product-card product-card--join reveal" style="max-width:900px;margin:0 auto;text-align:left;">
@@ -325,5 +362,46 @@
   </footer>
 
   <script src="../script.js"></script>
+
+  <!-- Resolve the latest Oversight installer from the Intellect LE release API.
+       Keeps the download buttons pointed at the newest release automatically,
+       so publishing a new build on the dashboard requires no site edit. -->
+  <script>
+    (function () {
+      var API_BASE = 'https://intellect-unified-dashboard-production.up.railway.app';
+      var winBtn = document.getElementById('dlWindows');
+      var usbBtn = document.getElementById('dlUsb');
+      var winNote = document.getElementById('dlVersionWin');
+
+      // Fallback used if the API is unreachable — update only if the API changes.
+      var FALLBACK = API_BASE + '/updates/project-oversight/' +
+        encodeURIComponent('Project Oversight_1.2.0_x64-setup.exe');
+
+      function applyHref(url) {
+        if (winBtn) winBtn.href = url;
+        if (usbBtn) usbBtn.href = url;
+      }
+
+      applyHref(FALLBACK);
+
+      fetch(API_BASE + '/api/updates/project-oversight/latest?current_version=0.0.0')
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (data) {
+          if (data && data.download_url) {
+            // download_url is a server path that may contain spaces.
+            var path = data.download_url.split('/').map(function (seg) {
+              return encodeURIComponent(seg);
+            }).join('/');
+            applyHref(API_BASE + path);
+          }
+          if (winNote && data && data.latest_version) {
+            winNote.textContent = 'Version ' + data.latest_version + ' · free trial included';
+          }
+        })
+        .catch(function () {
+          if (winNote) winNote.textContent = 'Latest release · free trial included';
+        });
+    })();
+  </script>
 </body>
 </html>
