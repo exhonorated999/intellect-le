@@ -3,13 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Project Oversight by Intellect LE — modern sex offender case management without the cost. Runs offline from a USB drive, no annual fees. Provided free to SOMS Symposium attendees." />
+  <meta name="description" content="Project Oversight by Intellect LE — modern sex offender case management without the cost. Runs offline from a USB drive, no annual fees, and now shares one set of records across every computer in your office — never the cloud. Provided free to SOMS Symposium attendees." />
   <title>Project Oversight — Intellect LE</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    /* "New" announcement chip in the hero */
+    .new-chip {
+      display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px;
+      padding: 7px 16px 7px 7px; border-radius: 999px;
+      border: 1px solid var(--panel-brd); background: rgba(13,9,18,.55);
+      color: var(--ink); font-size: .9rem; transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .new-chip:hover { border-color: var(--pink); transform: translateY(-2px); box-shadow: var(--glow-pink); }
+    .new-chip .tag {
+      font-family: "Orbitron", sans-serif; font-size: .64rem; letter-spacing: .14em; text-transform: uppercase;
+      padding: 5px 10px; border-radius: 999px; background: var(--grad); color: #120810; font-weight: 700;
+    }
+    .new-chip .arrow { color: var(--pink); }
+
+    /* Department Database spotlight */
+    .dept-spot { border-top: 1px solid var(--panel-brd); border-bottom: 1px solid var(--panel-brd); }
+    .dept-spot .section-head { max-width: 820px; }
+    .section-sub { color: var(--ink-dim); margin-top: 16px; font-size: 1.05rem; }
+    .dept-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-top: 8px; }
+    .dept-steps .info-card { position: relative; }
+    .dept-steps .num {
+      display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%;
+      background: var(--grad); color: #120810; font-family: "Orbitron", sans-serif; font-weight: 700; margin-bottom: 14px;
+      box-shadow: var(--glow-pink);
+    }
+    .dept-guide {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px;
+      margin-top: 40px; padding: 24px 28px; border-radius: var(--radius);
+      border: 1px solid var(--panel-brd); background: var(--grad-soft);
+    }
+    .dept-guide h4 { font-size: 1.12rem; margin-bottom: 4px; }
+    .dept-guide p { color: var(--ink-dim); font-size: .95rem; }
+  </style>
 </head>
 <body>
   <!-- Atmospheric background layers -->
@@ -41,6 +75,7 @@
 
     <nav class="nav-links" aria-label="Primary">
       <a href="#features">Features</a>
+      <a href="#department">Department</a>
       <a href="#how">How It Works</a>
       <a href="#downloads">Download</a>
       <a href="../index.html#products">All Products</a>
@@ -61,6 +96,7 @@
         <img src="assets/os-logo.jpg" alt="Project Oversight logo" style="width:120px;height:120px;border-radius:20px;position:relative;z-index:1;border:1px solid var(--panel-brd);box-shadow:0 0 30px rgba(160,43,255,.45);" />
       </div>
       <p class="hero-eyebrow reveal" data-delay="1">Intellect LE Platform · Offender Management</p>
+      <a href="#department" class="new-chip reveal" data-delay="1"><span class="tag">New in 1.7</span> Department Database — share records across your office <span class="arrow" aria-hidden="true">→</span></a>
       <h1 class="hero-title reveal" data-delay="2" style="font-size:clamp(2rem,5.5vw,3.5rem);">
         <span class="grad">Modern Sex Offender Case Management</span>
         <span class="grad">Without the Cost</span>
@@ -72,7 +108,7 @@
         <a href="#downloads" class="btn btn-primary">Download Free Demo</a>
         <a href="https://www.somsymposium.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Attend the SOMS Symposium</a>
       </div>
-      <p class="status-pill reveal" data-delay="5"><span class="dot"></span> Runs locally · No annual fees · USB-deployable</p>
+      <p class="status-pill reveal" data-delay="5"><span class="dot"></span> Runs locally · Shares across your office · No annual fees · USB-deployable</p>
 
       <div class="hero-shot app-shot reveal" data-delay="5">
         <img src="assets/shot-dashboard.png" alt="Project Oversight case dashboard with offender stats, calendar, and to-do list" />
@@ -105,11 +141,16 @@
       <span class="kicker">What Makes Oversight Different</span>
       <h2 class="section-title">Own your data. <span class="grad">Owe nothing.</span></h2>
     </div>
-    <div class="info-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+    <div class="info-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
       <article class="info-card reveal">
         <span class="info-ico">Offline Operation</span>
         <h4>Runs locally</h4>
-        <p>No cloud storage. No external hosting. You truly own your data — it never leaves your device.</p>
+        <p>No cloud storage. No external hosting. You truly own your data — it never leaves your computers or your building.</p>
+      </article>
+      <article class="info-card reveal">
+        <span class="info-ico">Department Ready</span>
+        <h4>One officer or the whole unit</h4>
+        <p>Share one set of records across every computer in your office, over your own network. Still no cloud, still no fees.</p>
       </article>
       <article class="info-card reveal">
         <span class="info-ico">Zero Annual Fees</span>
@@ -121,6 +162,66 @@
         <h4>Plug in and go</h4>
         <p>Designed to bypass restrictive IT environments. Plug in, run, and work — no installation required.</p>
       </article>
+    </div>
+  </section>
+
+  <!-- DEPARTMENT DATABASE (new in 1.7) -->
+  <section class="section dept-spot" id="department">
+    <div class="section-head reveal">
+      <span class="kicker">New in Version 1.7 · Department Database</span>
+      <h2 class="section-title">One unit. <span class="grad">One set of records.</span></h2>
+      <p class="section-sub">No more emailing spreadsheets around or wondering whose copy is the real one. One office computer hosts the records; every other computer joins it with a code. Everyone works from the same offenders, tasks and notes — and it all stays inside your building.</p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="kicker">Shared Records</span>
+        <h3>Everyone on the same page, live</h3>
+        <p>When one officer saves a change, it shows up on everyone else's screen moments later. No refresh button, no "did you get my update?"</p>
+        <ul class="checklist">
+          <li>Host on any office computer — no server to buy</li>
+          <li>Other computers join with a simple join code</li>
+          <li>Records travel only across your local network, encrypted</li>
+          <li>Nothing is ever sent to the cloud</li>
+          <li>Automatic daily backups on the host</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-department.png" alt="Department Database panel on the host computer showing sharing status, the join code, host health and the officer list" loading="lazy" /></div>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--reverse">
+      <div class="feature-text reveal">
+        <span class="kicker">Officer Accounts</span>
+        <h3>Every officer signs in as themselves</h3>
+        <p>Each officer has their own username and password, so you always know who's working in the records.</p>
+        <ul class="checklist">
+          <li>Individual sign-ins for every officer</li>
+          <li>Administrator controls: add, disable, reset passwords</li>
+          <li>Disconnect a lost or replaced laptop in one click</li>
+          <li>Activity log of administrator actions</li>
+          <li>Bulk imports and deletions limited to administrators</li>
+        </ul>
+      </div>
+      <div class="feature-media reveal">
+        <div class="app-shot"><img src="assets/shot-officers.png" alt="Officer roster with individual accounts, license status and last-seen times" loading="lazy" /></div>
+      </div>
+    </div>
+
+    <div class="dept-steps">
+      <article class="info-card reveal"><span class="num">1</span><h4>Pick a host</h4><p>Any office computer that's on during the workday. Turn on sharing in Settings.</p></article>
+      <article class="info-card reveal"><span class="num">2</span><h4>Join the others</h4><p>Enter the join code on each computer. The host is found automatically.</p></article>
+      <article class="info-card reveal"><span class="num">3</span><h4>Sign in &amp; work</h4><p>Each officer creates their own account and gets straight to work.</p></article>
+      <article class="info-card reveal"><span class="num">✓</span><h4>Set it and forget it</h4><p>Lock the screen and go home — sharing keeps running, and the host reopens by itself after a restart.</p></article>
+    </div>
+
+    <div class="dept-guide reveal">
+      <div>
+        <h4>Step-by-step setup guide</h4>
+        <p>Every click, with screenshots. Most offices are up and running in about ten minutes.</p>
+      </div>
+      <a class="btn btn-ghost" href="assets/Project-Oversight-Department-Setup-Guide.pdf" target="_blank" rel="noopener">Download the guide (PDF)</a>
     </div>
   </section>
 
@@ -136,9 +237,10 @@
       <div class="feature-text reveal">
         <span class="kicker">Local Storage</span>
         <h3>Data ownership, guaranteed</h3>
-        <p>Everything stays on your machine — nothing to breach, nothing to subscribe to.</p>
+        <p>Everything stays on your machines — nothing to breach, nothing to subscribe to.</p>
         <ul class="checklist">
           <li>All data stored locally</li>
+          <li>Optional sharing over your own office network — never the internet</li>
           <li>No dependency on external servers</li>
           <li>No cloud security concerns</li>
           <li>No recurring hosting costs passed to agencies</li>
@@ -248,9 +350,10 @@
       <article class="info-card reveal"><span class="info-ico">Step 01</span><h4>Plug in the USB</h4><p>No installation required.</p></article>
       <article class="info-card reveal"><span class="info-ico">Step 02</span><h4>Launch Oversight</h4><p>Runs directly from the drive.</p></article>
       <article class="info-card reveal"><span class="info-ico">Step 03</span><h4>Import your CSV</h4><p>Bring existing records in fast.</p></article>
-      <article class="info-card reveal"><span class="info-ico">Step 04</span><h4>Manage &amp; check</h4><p>Handle offenders, run checks, generate reports.</p></article>
-      <article class="info-card reveal"><span class="info-ico">Step 05</span><h4>Export to VIPER</h4><p>Hand off complete profiles when needed.</p></article>
-      <article class="info-card reveal"><span class="info-ico">Step 06</span><h4>Receive updates</h4><p>From our small, dedicated server.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 04</span><h4>Share with your unit</h4><p>Optional: host on one computer, join from the rest.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 05</span><h4>Manage &amp; check</h4><p>Handle offenders, run checks, generate reports.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 06</span><h4>Export to VIPER</h4><p>Hand off complete profiles when needed.</p></article>
+      <article class="info-card reveal"><span class="info-ico">Step 07</span><h4>Receive updates</h4><p>From our small, dedicated server.</p></article>
     </div>
   </section>
 
@@ -263,6 +366,7 @@
     <div class="info-grid">
       <article class="info-card reveal"><h4>SO Management Units</h4><p>Sex offender management teams that need defensible records.</p></article>
       <article class="info-card reveal"><h4>Patrol Officers</h4><p>Officers conducting field compliance checks.</p></article>
+      <article class="info-card reveal"><h4>Multi-Officer Units</h4><p>Teams that need everyone on the same records.</p></article>
       <article class="info-card reveal"><h4>Small Agencies</h4><p>Departments working with limited budgets.</p></article>
       <article class="info-card reveal"><h4>Spreadsheet &amp; Paper Shops</h4><p>Teams stuck on spreadsheets or paper files.</p></article>
       <article class="info-card reveal"><h4>Documentation-First Officers</h4><p>Anyone who needs fast, defensible documentation.</p></article>
@@ -279,7 +383,7 @@
       <article class="info-card reveal"><h4>Faster Compliance Checks</h4><p>Cut the time each check takes.</p></article>
       <article class="info-card reveal"><h4>Reduced Admin Burden</h4><p>Less paperwork, more supervision.</p></article>
       <article class="info-card reveal"><h4>Better Documentation</h4><p>Improved quality that holds up.</p></article>
-      <article class="info-card reveal"><h4>Officer Collaboration</h4><p>Cleaner handoffs between officers.</p></article>
+      <article class="info-card reveal"><h4>Officer Collaboration</h4><p>Everyone works from the same records, updated live.</p></article>
       <article class="info-card reveal"><h4>No IT Reliance</h4><p>No dependency on IT departments.</p></article>
       <article class="info-card reveal"><h4>No Recurring Cost</h4><p>No ongoing financial impact.</p></article>
     </div>
@@ -290,7 +394,7 @@
     <div class="section-head reveal">
       <span class="kicker">Downloads</span>
       <h2 class="section-title">Try <span class="grad">Oversight</span> free.</h2>
-      <p class="section-sub">Download the installer and start a full-featured trial — no license key required. Install it on a workstation or run it from a USB drive in restricted IT environments.</p>
+      <p class="section-sub">Download the installer and start a full-featured trial — no license key required. Install it on a workstation or run it from a USB drive in restricted IT environments. Version 1.7 adds the <a href="#department" style="color:var(--pink);">Department Database</a> for sharing records across your office.</p>
     </div>
 
     <div class="download-grid">
@@ -374,8 +478,7 @@
       var winNote = document.getElementById('dlVersionWin');
 
       // Fallback used if the API is unreachable — update only if the API changes.
-      var FALLBACK = API_BASE + '/updates/project-oversight/' +
-        encodeURIComponent('Project Oversight_1.2.0_x64-setup.exe');
+      var FALLBACK = 'https://github.com/exhonorated999/project-oversight-releases/releases/latest';
 
       function applyHref(url) {
         if (winBtn) winBtn.href = url;
@@ -388,11 +491,16 @@
         .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
         .then(function (data) {
           if (data && data.download_url) {
-            // download_url is a server path that may contain spaces.
-            var path = data.download_url.split('/').map(function (seg) {
-              return encodeURIComponent(seg);
-            }).join('/');
-            applyHref(API_BASE + path);
+            // download_url is either an absolute URL (GitHub release asset)
+            // or a server path on the dashboard that may contain spaces.
+            var u = data.download_url;
+            if (/^https?:\/\//i.test(u)) {
+              applyHref(u);
+            } else {
+              applyHref(API_BASE + u.split('/').map(function (seg) {
+                return encodeURIComponent(seg);
+              }).join('/'));
+            }
           }
           if (winNote && data && data.latest_version) {
             winNote.textContent = 'Version ' + data.latest_version + ' · free trial included';
